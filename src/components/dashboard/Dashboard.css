@@ -1,3 +1,13 @@
 .dashboard-container {
-    margin: 3rem 3rem 0 0;
+    margin-left: 5rem;
+    background-color: lightgray;
+}
+
+.dashboard-container h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+h1 span {
+    color: red;
 }

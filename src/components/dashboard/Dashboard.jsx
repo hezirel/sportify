@@ -1,6 +1,7 @@
 import { React, useState, useEffect} from "react";
 import PropTypes from "prop-types";
 import "./Dashboard.css";
+import Charts from "../charts/Charts";
 
 const Dashboard = ({ id }) => {
 
@@ -14,9 +15,9 @@ const Dashboard = ({ id }) => {
 
 	return (
 		<div className="dashboard-container">
-			<span className="name-container">
-                Bonjour <h1>{data?.userInfos?.firstName || "Default"}</h1>
-			</span>
+			<h1>Bonjour <span>{data?.userInfos?.firstName || "Erreur"}</span></h1>
+			<p>{"Future subtext"}</p>
+			<Charts data={data} />
 		</div>
 	);
 
