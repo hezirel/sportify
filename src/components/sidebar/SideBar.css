@@ -5,13 +5,14 @@
     top: 0;
     left: 0;
     z-index: -1;
-    width: fit-content;
-    height: 100vh;
+    /*#:Fix Css height*/
+    height: 92vh;
     text-align: center;
     background-color: black;
     color: white;
     list-style: none;
-    padding: 1rem 1rem;
+    padding: 0 0.5rem;
+    overflow: clip;
     justify-content: center;
 }
 

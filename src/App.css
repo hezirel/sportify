@@ -1,3 +1,7 @@
+.app {
+  overflow-y: hidden;
+}
+
 .dashboard-container {
   display: flex;
   background-color: red;
