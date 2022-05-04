@@ -10,6 +10,7 @@
     list-style: none;
     padding: 0 0.5rem;
     justify-content: center;
+    overflow: clip;
 }
 
 .activities-list-items {

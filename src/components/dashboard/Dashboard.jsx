@@ -12,7 +12,6 @@ const Dashboard = ({ id }) => {
 			fetch(`http://192.168.0.52:3000/user/${id}`)
 				.then(res => res.json())
 				.then(({ data }) => setData(data), err => console.error(err));
-
 		}
 	}), [id];
 

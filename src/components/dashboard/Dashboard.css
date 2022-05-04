@@ -1,21 +1,21 @@
 .dashboard-container {
     grid-area: app;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.2fr repeat(2, 1fr);
     grid-template-areas: 
         "header-app header-app header-app header-app"
         "bar bar bar key"
         "line radar radial key";
-    margin-left: 1rem;
+    margin-left: 3rem;
     gap: 0.5rem;
-    height: 90vh;
+    max-height: max-content;
+    height: 85vh;
     overflow: hidden;
 }
 
 .dashboard-header {
     grid-area: header-app;
-    font-size: 36px;
     font-weight: bold;
 }
 
