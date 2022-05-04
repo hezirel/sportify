@@ -2,7 +2,7 @@ import "./App.css";
 import { React } from "react";
 import TopBar from "./components/sidebar/TopBar";
 import SideBar from "./components/sidebar/SideBar";
-import Dashboard from "./compenents/dashboard/Dashboard";
+import Dashboard from "./components/dashboard/Dashboard";
 
 function App() {
 
