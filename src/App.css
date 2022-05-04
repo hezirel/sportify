@@ -1,13 +1,14 @@
 .app {
+  height: 100vh;
   display: grid;
   grid-template-columns: 0.1fr 1fr;
-  grid-template-rows: 0.1fr 0.9fr;
+  grid-template-rows: 0.1fr 1fr;
   grid-template-areas:
     "header header"
     "sidebar app";
+  
 }
 
 .app-content {
-  height: 100vh;
   overflow: hidden;
 }
