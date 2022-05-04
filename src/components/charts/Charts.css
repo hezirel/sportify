@@ -1,0 +1,24 @@
+.charts-bar {
+	grid-area: bar;
+	background-color: grey;
+}
+
+.charts-line {
+	grid-area: line;
+	background-color: green;
+}
+
+.charts-radar {
+	grid-area: radar;
+	background-color: purple;
+}
+
+.charts-radial {
+	grid-area: radial;
+	background-color: orange;
+}
+
+.charts-keys {
+	grid-area: key;
+	background-color: brown;
+}

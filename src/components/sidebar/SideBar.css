@@ -1,9 +1,7 @@
 .side-bar {
+    grid-area: sidebar;
     display: flex;
     flex-direction: column;
-    float: left;
-    top: 0;
-    left: 0;
     z-index: -1;
     height: 100vh;
     text-align: center;

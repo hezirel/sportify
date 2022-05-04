@@ -11,11 +11,16 @@ function App() {
 
 	return (
 		<div className="app">
+
 			<TopBar />
 			<SideBar />
-			<div className="dashboard-container">
+
+			<div className="app-content">
+
 				<Dashboard id={id} />
+
 			</div>
+
 		</div>
 	);
 }
