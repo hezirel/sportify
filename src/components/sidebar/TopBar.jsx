@@ -1,7 +1,7 @@
 import logo from "../../assets/logo.png";
 import "./TopBar.css";
 import React from "react";
-import list from "./MenuList";
+import list from "./menuList";
 
 
 const TopBar = () => {

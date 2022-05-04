@@ -1,0 +1,22 @@
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: fit-content;
+    height: 100vh;
+    text-align: center;
+    background-color: black;
+    color: white;
+    list-style: none;
+    padding: 1rem 1rem;
+    justify-content: center;
+}
+
+.activities-list-items {
+    display: block;
+    text-align: center;
+    padding: 1rem 0;
+}
