@@ -1,32 +1,23 @@
-import { React, useEffect, useState } from "react";
+import { React, useEffect } from "react";
 import PropTypes from "prop-types";
 import * as d3 from "d3";
 
-const BarChart = ({ id }) => {
-
-	const [cache, setCache] = useState([]);
+const BarChart = ({ payload }) => {
 
 	const svg = d3.select("#chart-bar");
-
-	svg.append("svg")
-		.attr("width", "300px")
-		.attr("height", "200px")
-		.attr("id", "chart-bar-svg")
-		.style("background-color", "red");
-
+	console.log(payload);
 
 	useEffect(() => {
-		if (id) {
-			fetch(`http://192.168.0.52:3000/user/${id}/activity`)
-				.then(res => res.json())
-				.then(({ data }) => setCache(data.sessions), err => console.error(err));
+		svg.selectAll("*").remove();
 
-		}}, []);
-
-	useEffect(() => {
-
-		d3.select("#chart-bar-svg").selectAll("rect")
-			.data(cache)
+		svg.append("svg")
+			.attr("width", "300px")
+			.attr("height", "200px")
+			.attr("id", "chart-bar-svg")
+			.style("background-color", "grey");
+		
+		d3.select("svg").selectAll("rect")
+			.data(payload)
 			.enter()
 			.append("rect")
 			.attr("x", (d, i) => (i * 20))
@@ -34,7 +25,7 @@ const BarChart = ({ id }) => {
 			.attr("width", "5px")
 			.attr("height", "30px")
 			.style("fill", "blue");
-	}, [cache]);
+	}, []);
 
 	return (
 		<></>
@@ -43,7 +34,7 @@ const BarChart = ({ id }) => {
 };
 
 BarChart.propTypes = {
-	id: PropTypes.number
+	payload: PropTypes.array.isRequired
 };
 
 export default BarChart;

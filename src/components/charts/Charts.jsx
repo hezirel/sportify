@@ -1,15 +1,21 @@
-import { React } from "react";
+import { React, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import "./Charts.css";
 import BarChart from "./BarChart";
+import fetchData from "../../js/fetchHandler";
 
 const Charts = ({ id }) => {
 
-	//#:Create context provider
+	const [sessions, setSessions] = useState([]);
+
+	useEffect(() => {
+		fetchData(`${id}/activity`).then(data => setSessions(data.data.sessions));
+	}, []);
+
 	return (
 		<>
 			<div className="charts-bar" id="chart-bar">
-				<BarChart id={id} />
+				<BarChart payload={sessions}/>
 			</div>   
 			<div className="charts-line"></div>   
 			<div className="charts-radar"></div>   

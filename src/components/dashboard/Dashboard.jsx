@@ -1,24 +1,21 @@
-import { React, useState, useEffect} from "react";
+import { React, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import "./Dashboard.css";
 import Charts from "../charts/Charts";
+import fetchData from "../../js/fetchHandler";
 
 const Dashboard = ({ id }) => {
 
-	const [data, setData] = useState(false);
+	const [name, setName] = useState("");
 
 	useEffect(() => {
-		if (!data) {
-			fetch(`http://192.168.0.52:3000/user/${id}`)
-				.then(res => res.json())
-				.then(({ data }) => setData(data), err => console.error(err));
-		}
-	}), [data];
+		fetchData(id).then(data => setName(data.data.userInfos.firstName));
+	}, []);
 
 	return (
 		<div className="dashboard-container">
 			<div className="dashboard-header">
-				<h1>Bonjour <span>{data?.userInfos?.firstName || "Chargement"}</span></h1>
+				<h1>Bonjour <span>{name}</span></h1>
 				<p>{"Future subtext"}</p>
 			</div>
 			<Charts id={id} />
