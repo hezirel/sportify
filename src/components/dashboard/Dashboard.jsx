@@ -13,22 +13,22 @@ const Dashboard = ({ id }) => {
 				.then(res => res.json())
 				.then(({ data }) => setData(data), err => console.error(err));
 		}
-	}), [id];
+	}), [data];
 
 	return (
 		<div className="dashboard-container">
 			<div className="dashboard-header">
-				<h1>Bonjour <span>{data?.userInfos?.firstName || ""}</span></h1>
+				<h1>Bonjour <span>{data?.userInfos?.firstName || "Chargement"}</span></h1>
 				<p>{"Future subtext"}</p>
 			</div>
-			<Charts data={data} />
+			<Charts id={id} />
 		</div>
 	);
 
 };
 
 Dashboard.propTypes = {
-	id: PropTypes.number.isRequired
+	id: PropTypes.number
 };
 
 export default Dashboard;

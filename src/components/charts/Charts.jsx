@@ -1,14 +1,16 @@
 import { React } from "react";
 import PropTypes from "prop-types";
 import "./Charts.css";
+import BarChart from "./BarChart";
 
-const Charts = ({ data }) => {
+const Charts = ({ id }) => {
 
-	if (!data) return null;
-
+	//#:Create context provider
 	return (
 		<>
-			<div className="charts-bar"></div>   
+			<div className="charts-bar" id="chart-bar">
+				<BarChart id={id} />
+			</div>   
 			<div className="charts-line"></div>   
 			<div className="charts-radar"></div>   
 			<div className="charts-radial"></div>   
@@ -18,7 +20,7 @@ const Charts = ({ data }) => {
 };
 
 Charts.propTypes = {
-	data: PropTypes.oneOfType([PropTypes.object, PropTypes.bool])
+	id: PropTypes.number
 };
 
 export default Charts;
