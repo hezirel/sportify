@@ -5,14 +5,23 @@ import * as d3 from "d3";
 const BarChart = ({ payload }) => {
 
 	const svg = d3.select("#chart-bar");
-	console.log(payload);
+	const yScale = d3.scaleLinear();
+	const xScale = d3.scaleLinear();
+
 
 	useEffect(() => {
 		svg.selectAll("*").remove();
 
+		yScale.domain([d3.min(payload, d => d.calories), d3.max(payload, d => d.calories)]);
+
+		yScale.range([200, 0]);
+
+		xScale.domain([0, payload.length]);
+		xScale.range([0, 300]);
+
 		svg.append("svg")
-			.attr("width", "300px")
-			.attr("height", "200px")
+			.attr("width", "100%")
+			.attr("height", "100%")
 			.attr("id", "chart-bar-svg")
 			.style("background-color", "grey");
 		
@@ -20,12 +29,14 @@ const BarChart = ({ payload }) => {
 			.data(payload)
 			.enter()
 			.append("rect")
-			.attr("x", (d, i) => (i * 20))
-			.attr("y", (d) => (200-d.kilogram))
-			.attr("width", "5px")
-			.attr("height", "30px")
-			.style("fill", "blue");
-	}, []);
+			.attr("x", (d, i) => xScale(i))
+			.attr("y", "200")
+			.attr("width", "20px")
+			.attr("height", (d) => yScale(d.calories) + "px")
+			.style("fill", "blue")
+			.append("text")
+			.text(d => `${d.calories}`);
+	}, [payload]);
 
 	return (
 		<></>
