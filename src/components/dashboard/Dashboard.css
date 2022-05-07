@@ -2,12 +2,12 @@
     grid-area: app;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 0.2fr repeat(2, 1fr);
+    grid-template-rows: 0.05fr repeat(2, 1fr);
     grid-template-areas: 
         "header-app header-app header-app header-app"
         "bar bar bar key"
         "line radar radial key";
-    margin-left: 3rem;
+    padding: 0.8rem 0.8rem 1rem 1rem;
     gap: 0.5rem;
     max-height: max-content;
     height: 85vh;
@@ -17,6 +17,8 @@
 .dashboard-header {
     grid-area: header-app;
     font-weight: bold;
+    /*#:Resize font*/
+    font-size: 0.1rem;
 }
 
 h1 span {

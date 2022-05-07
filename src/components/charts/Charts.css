@@ -2,6 +2,7 @@
 	grid-area: bar;
 }
 
+
 .charts-line {
 	grid-area: line;
 	background-color: green;

@@ -10,10 +10,11 @@
     padding: 0 0.5rem;
     justify-content: center;
     overflow: clip;
+    font-size: 0.3rem;
 }
 
 .activities-list-items {
     display: block;
     text-align: center;
-    padding: 1rem 0;
+    padding: 0.3rem 0;
 }

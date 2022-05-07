@@ -1,23 +1,23 @@
 .top-bar {
     grid-area: header;
     background-color: black;
-    padding: 0.3rem;
+    padding: 0.1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .logo {
-    max-height: 2.5rem;
-    padding: 0.5rem 1rem;
+    max-height: 2.2rem;
+    padding: 0.1rem 1rem;
 }
 
 .menu-list-items {
     cursor: pointer;
     color: white;
     list-style-type: none;
-    font-size: larger;
-    padding: 1rem;
+    font-size: 0.7rem;
+    padding: 0.7rem 1rem;
     flex-grow: 1;
     text-align: center;
     font-weight: bold;
