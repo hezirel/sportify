@@ -7,19 +7,14 @@ import fetchData from "../../js/fetchHandler";
 const Dashboard = ({ id }) => {
 
 	const [name, setName] = useState("");
+	name ? true : false;
 
 	useEffect(() => {
 		fetchData(id).then(data => setName(data.data.userInfos.firstName));
 	}, []);
 
 	return (
-		<div className="dashboard-container">
-			<div className="dashboard-header">
-				<h1>Bonjour <span>{name}</span></h1>
-				<p>{"Future subtext"}</p>
-			</div>
-			<Charts id={id} />
-		</div>
+		<Charts id={id} />
 	);
 
 };
@@ -29,3 +24,10 @@ Dashboard.propTypes = {
 };
 
 export default Dashboard;
+
+{/* 		<div className="dashboard-container">
+			<div className="dashboard-header">
+				<h1>Bonjour <span>{name}</span></h1>
+				<p>{"Future subtext"}</p>
+			</div>
+		</div> */}

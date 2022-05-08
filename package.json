@@ -16,7 +16,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "debug": "react-scripts start --no-cache",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -39,7 +38,7 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.14.0",
+    "eslint": "^8.15.0",
     "eslint-plugin-react": "^7.29.4"
   }
 }
