@@ -17,10 +17,10 @@ const Charts = ({ id }) => {
 			<div className="charts-bar" id="chart-bar">
 				<BarChart payload={sessions}/>
 			</div>   
-			<div className="charts-line"></div>   
+			{/* 			<div className="charts-line"></div>   
 			<div className="charts-radar"></div>   
 			<div className="charts-radial"></div>   
-			<div className="charts-keys"></div>
+			<div className="charts-keys"></div> */}
 		</>
 	);
 };
