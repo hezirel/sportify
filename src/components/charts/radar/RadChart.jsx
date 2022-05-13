@@ -3,9 +3,7 @@ import {
 	ResponsiveContainer,
 	RadarChart,
 	PolarAngleAxis,
-	PolarRadiusAxis,
 	Radar,
-	Legend,
 	PolarGrid
 } from "recharts";
 import PropTypes from "prop-types";
@@ -13,18 +11,14 @@ import PropTypes from "prop-types";
 const RadChart = ({ payload }) => {
 
 	const [data, setData] = useState(false);
-	
-	useEffect(() => {
-		payload ? setData(payload) : false;
-	}, [payload]);
 
 	useEffect(() => {
-		data ? setData((payload.data).map((item) => 
+		payload ? setData((payload.data).map((item) => 
 			({
 				name: payload.kind[item.kind],
 				value: item.value,
 			}))) : false;
-	}, [data]);
+	}, [payload]);
 
 	return (
 		<>
@@ -32,9 +26,7 @@ const RadChart = ({ payload }) => {
 				{data ? (<RadarChart data={data}>
 					<PolarGrid />
 					<PolarAngleAxis dataKey="name" />
-					<PolarRadiusAxis />
 					<Radar dataKey="value" fill="var(--clr-primary)" />
-					<Legend/>
 				</RadarChart>) : <div>test</div>}
 			</ResponsiveContainer>
 		</>
