@@ -14,7 +14,15 @@ const Dashboard = ({ id }) => {
 	}, []);
 
 	return (
-		<Charts id={id} />
+		<>
+			<div className="dashboard-container">
+				<div className="dashboard-header">
+					<h1>Bonjour <span>{name}</span></h1>
+					<p>{"Future subtext"}</p>
+				</div>
+				<Charts id={id} />
+			</div>
+		</>
 	);
 
 };
@@ -24,10 +32,3 @@ Dashboard.propTypes = {
 };
 
 export default Dashboard;
-
-{/* 		<div className="dashboard-container">
-			<div className="dashboard-header">
-				<h1>Bonjour <span>{name}</span></h1>
-				<p>{"Future subtext"}</p>
-			</div>
-		</div> */}

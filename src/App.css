@@ -1,15 +1,11 @@
 .app {
   height: 100vh;
   display: grid;
-
-/* 
-  #:Change css display back to prod
   grid-template-columns: 0.02fr 1fr;
   grid-template-rows: 0.1fr 1fr;
   grid-template-areas:
     "header header"
-    "sidebar app"; */
-  
+    "sidebar app";
 }
 
 .app-content {
