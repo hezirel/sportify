@@ -10,38 +10,40 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 
-const Chart = ({ payload }) => {
+const RadChart = ({ payload }) => {
 
-	const [data, setData] = useState({});
+	const [data, setData] = useState(false);
 	
 	useEffect(() => {
-
-		setData((payload.val).map((item) => 
-			({
-				name: payload.label[item.kind],
-				value: item.value,
-			})));
-
+		payload ? setData(payload) : false;
 	}, [payload]);
 
-	return payload !== {} ? (
+	useEffect(() => {
+		data ? setData((payload.data).map((item) => 
+			({
+				name: payload.kind[item.kind],
+				value: item.value,
+			}))) : false;
+	}, [data]);
+
+	return (
 		<>
 			<ResponsiveContainer width="100%" height="100%">
-				<RadarChart data={data}>
+				{data ? (<RadarChart data={data}>
 					<PolarGrid />
 					<PolarAngleAxis dataKey="name" />
 					<PolarRadiusAxis />
 					<Radar dataKey="value" fill="var(--clr-primary)" />
 					<Legend/>
-				</RadarChart>
+				</RadarChart>) : <div>test</div>}
 			</ResponsiveContainer>
 		</>
-	) : <div></div>;
+	);
 
 };
 
-Chart.propTypes = {
+RadChart.propTypes = {
 	payload: PropTypes.object
 };
 
-export default Chart;
+export default RadChart;

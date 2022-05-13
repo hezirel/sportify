@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import "./BarChart.css";
 
-const Chart = ({ payload }) => {
+const BChart = ({ payload }) => {
 
 	const [data, setData] = useState([]);
 	const parseDay = (day) => new Date(day).getDate();
@@ -46,8 +46,8 @@ const Chart = ({ payload }) => {
 
 };
 
-Chart.propTypes = {
+BChart.propTypes = {
 	payload: PropTypes.array.isRequired
 };
 
-export default Chart;
+export default BChart;

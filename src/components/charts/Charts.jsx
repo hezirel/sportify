@@ -5,16 +5,16 @@ import fetchData from "../../js/fetchHandler";
 import "./Charts.css";
 
 import BarChart from "./bar/BarChart";
-import RadarChart from "./radar/RadarChart";
+import RadChart from "./radar/RadChart";
 
 const Charts = ({ id }) => {
 
 	const [sessions, setSessions] = useState([]);
-	const [perfs, setPerfs] = useState({});
+	const [perfs, setPerfs] = useState(false);
 
 	useEffect(() => {
 		fetchData(id + "/activity").then(data => setSessions(data.data.sessions));
-		fetchData(id + "/performance").then(data => setPerfs(data));
+		fetchData(id + "/performance").then(data => setPerfs(data.data));
 	}, [id]);
 
 	return (
@@ -23,9 +23,10 @@ const Charts = ({ id }) => {
 				<BarChart payload={sessions} />
 			</div>
 			<div className="charts-line">
-				<RadarChart payload={perfs} />
 			</div>   
-			<div className="charts-radar"></div>   
+			<div className="charts-radar">
+				<RadChart payload={perfs ? perfs : false} />
+			</div>   
 			<div className="charts-radial"></div>   
 			<div className="charts-keys"></div>
 		</>
