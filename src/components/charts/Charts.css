@@ -1,7 +1,6 @@
 .charts-bar {
 	grid-area: bar;
-	width: 100%;
-	height: 100%;
+	outline: 1px solid var(--clr-primary)
 }
 
 .charts-line {
