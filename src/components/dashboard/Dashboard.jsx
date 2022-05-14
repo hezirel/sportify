@@ -15,9 +15,9 @@ const Dashboard = ({ id }) => {
 		<>
 			<div className="dashboard-container">
 				<div className="dashboard-header">
-					{data && <h1>Welcome <span>{data.userInfos.firstName}</span></h1>}
-					{error && <h1>Error user not Found</h1>}
 					{loading && <h1>Loading...</h1>}
+					{error && <h1>Error <span>User not found (404)</span></h1>}
+					{data && <h1>Welcome <span>{data.userInfos.firstName}</span></h1>}
 					<p>{"Future subtext"}</p>
 				</div>
 				<Charts id={id} />

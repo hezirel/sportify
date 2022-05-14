@@ -14,7 +14,7 @@ const useFetch = (options) => {
 		fetch(`${URL}${options}`)
 			.then(async res => {
 				if(!res.ok) {
-					setError(res.statusText);
+					setError(res.status);
 					setLoading(false);
 				} else {
 					res.json().then(data => setData(data.data))

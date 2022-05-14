@@ -1,53 +1,70 @@
-import { React, useEffect, useState } from "react";
+import { 
+	React, 
+} from "react";
 import PropTypes from "prop-types";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+
+import { 
+	BarChart,
+	Bar,
+	XAxis,
+	YAxis,
+	CartesianGrid,
+	Tooltip,
+	Legend,
+	ResponsiveContainer
+} from "recharts";
+
+import useFetch from "../../../js/useFetch";
 import "./BarChart.css";
 
-const BChart = ({ payload }) => {
+const BChart = ({ id }) => {
 
-	const [data, setData] = useState([]);
+	const { data, loading, error} = useFetch(`${id}/activity`);
+
 	const parseDay = (day) => new Date(day).getDate();
 	
-	useEffect(() => {
 
-		setData(payload.map((item) => 
-			({
-				day: parseDay(item.day),
-				kg: item.kilogram,
-				cal: item.calories
-			})));
-
-	}, [payload]);
-
-	return data.length ? (
+	return (
 		<>
-			<ResponsiveContainer width="100%" height="100%">
-				<BarChart data={data}>
-					<CartesianGrid strokeDasharray="2" vertical={false}
+			{loading && <p>Loading...</p>}
+			{error && <p>Error...</p>}
+			{data && (
+				<ResponsiveContainer width="100%" height="100%">
+					<BarChart data={
 
-					/>
-					<XAxis dataKey="day" />
-					<YAxis dataKey="kg" orientation="right" />
-					<Tooltip payload={[]}/>
-					<Legend verticalAlign="top" align="right" margin={{
-						top: 0,
-						right: 50,
-						bottom: 10,
-						left: 0
-					}}
-					iconType="circle"
-					/>
-					<Bar dataKey="kg" fill="black" />
-					<Bar dataKey="cal" fill="var(--clr-primary)" />
-				</BarChart>
-			</ResponsiveContainer>
+						data.sessions.map((item) => 
+							({
+								day: parseDay(item.day),
+								kg: item.kilogram,
+								cal: item.calories
+							}))} 
+					>
+						<CartesianGrid strokeDasharray="2" vertical={false}
+
+						/>
+						<XAxis dataKey="day" />
+						<YAxis dataKey="kg" orientation="right" />
+						<Tooltip payload={[]}/>
+						<Legend verticalAlign="top" align="right" margin={{
+							top: 0,
+							right: 50,
+							bottom: 10,
+							left: 0
+						}}
+						iconType="circle"
+						/>
+						<Bar dataKey="kg" fill="black" />
+						<Bar dataKey="cal" fill="var(--clr-primary)" />
+					</BarChart>
+				</ResponsiveContainer>
+			)}
 		</>
-	) : <></>;
+	);
 
 };
 
 BChart.propTypes = {
-	payload: PropTypes.array.isRequired
+	id: PropTypes.number.isRequired
 };
 
 export default BChart;
