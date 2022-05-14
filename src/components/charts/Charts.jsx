@@ -6,6 +6,7 @@ import "./Charts.css";
 import BarChart from "./bar/BarChart";
 import RadarChart from "./radar/RadarChart";
 import RadialChart from "./radial/RadialChart";
+import KeyChart from "./key/KeyChart";
 
 const Charts = ({ id }) => {
 
@@ -22,7 +23,9 @@ const Charts = ({ id }) => {
 			<div className="charts-radial">
 				<RadialChart id={id} />
 			</div>   
-			<div className="charts-keys"></div>
+			<div className="charts-keys">
+				<KeyChart id={id} />
+			</div>
 		</>
 	);
 };
