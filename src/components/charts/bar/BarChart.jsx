@@ -15,6 +15,7 @@ import {
 } from "recharts";
 
 import useFetch from "../../../js/useFetch";
+import Loader from "../Loader";
 import "./BarChart.css";
 
 const BChart = ({ id }) => {
@@ -22,12 +23,11 @@ const BChart = ({ id }) => {
 	const { data, loading, error} = useFetch(`${id}/activity`);
 
 	const parseDay = (day) => new Date(day).getDate();
-	
 
 	return (
 		<>
-			{loading && <p>Loading...</p>}
-			{error && <p>Error...</p>}
+			{(loading || error )&& <Loader ld={loading} err={error}/>}
+
 			{data && (
 				<ResponsiveContainer width="100%" height="100%">
 					<BarChart data={

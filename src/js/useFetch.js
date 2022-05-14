@@ -13,6 +13,7 @@ const useFetch = (options) => {
 
 		fetch(`${URL}${options}`)
 			.then(async res => {
+				//#:Refactor status check with different err throw methods
 				if(!res.ok) {
 					setError(res.status);
 					setLoading(false);

@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import { React } from "react";
 import { 
 	ResponsiveContainer,
 	RadarChart,
@@ -6,36 +6,45 @@ import {
 	Radar,
 	PolarGrid
 } from "recharts";
+
 import PropTypes from "prop-types";
 
-const RadChart = ({ payload }) => {
+import useFetch from "../../../js/useFetch";
+import Loader from "../Loader";
 
-	const [data, setData] = useState(false);
+const RadChart = ({ id }) => {
 
-	useEffect(() => {
-		payload ? setData((payload.data).map((item) => 
-			({
-				name: payload.kind[item.kind],
-				value: item.value,
-			}))) : false;
-	}, [payload]);
+	const { data, loading, error} = useFetch(`${id}/performance`);
 
 	return (
 		<>
-			<ResponsiveContainer width="100%" height="100%">
-				{data ? (<RadarChart data={data}>
-					<PolarGrid />
-					<PolarAngleAxis dataKey="name" />
-					<Radar dataKey="value" fill="var(--clr-primary)" />
-				</RadarChart>) : <div>test</div>}
-			</ResponsiveContainer>
+			{(loading || error )&& <Loader ld={loading} err={error}/>}
+
+			{data &&
+				<ResponsiveContainer width="100%" height="100%">
+
+					<RadarChart data={
+						data.data.map((item) => 
+							({
+								name: data.kind[item.kind],
+								value: item.value
+							}))
+					}>
+
+						<PolarGrid />
+						<PolarAngleAxis dataKey="name" />
+						<Radar dataKey="value" fill="var(--clr-primary)" />
+
+					</RadarChart>
+				</ResponsiveContainer>
+			}
 		</>
 	);
 
 };
 
 RadChart.propTypes = {
-	payload: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+	id: PropTypes.number.isRequired
 };
 
 export default RadChart;
