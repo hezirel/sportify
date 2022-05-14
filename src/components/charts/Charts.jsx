@@ -1,20 +1,27 @@
 import { React, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import fetchData from "../../js/fetchHandler";
 
 import "./Charts.css";
 
 import BarChart from "./bar/BarChart";
 import RadChart from "./radar/RadChart";
 
+const URL = "http://192.168.0.51:3000/user/";
 const Charts = ({ id }) => {
 
+	//#:Move to charts components
 	const [sessions, setSessions] = useState([]);
 	const [perfs, setPerfs] = useState(false);
+	perfs ? 1 : 0;
 
 	useEffect(() => {
-		fetchData(id + "/activity").then(data => setSessions(data.data.sessions));
-		fetchData(id + "/performance").then(data => setPerfs(data.data));
+		fetch(URL + id + "/activity")
+			.then(res => res.json())
+			.then(data => setSessions(data.data.sessions));
+
+		fetch(URL + id + "/performance")
+			.then(res => res.json())
+			.then(data => setPerfs(data.data));
 	}, [id]);
 
 	return (
@@ -25,7 +32,7 @@ const Charts = ({ id }) => {
 			<div className="charts-line">
 			</div>   
 			<div className="charts-radar">
-				<RadChart payload={perfs ? perfs : false} />
+				<RadChart payload={false} />
 			</div>   
 			<div className="charts-radial"></div>   
 			<div className="charts-keys"></div>

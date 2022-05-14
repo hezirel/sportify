@@ -35,7 +35,7 @@ const RadChart = ({ payload }) => {
 };
 
 RadChart.propTypes = {
-	payload: PropTypes.object
+	payload: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
 };
 
 export default RadChart;

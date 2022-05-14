@@ -1,22 +1,23 @@
-import { React, useEffect, useState } from "react";
+import { 
+	React,
+} from "react";
+
 import PropTypes from "prop-types";
 import "./Dashboard.css";
 import Charts from "../charts/Charts";
-import fetchData from "../../js/fetchHandler";
+import useFetch from "../../js/useFetch";
 
 const Dashboard = ({ id }) => {
 
-	const [name, setName] = useState("");
-
-	useEffect(() => {
-		fetchData(id).then(data => setName(data.data.userInfos.firstName));
-	}, [id]);
+	const { loading, data, error } = useFetch(`${id}`);
 
 	return (
 		<>
 			<div className="dashboard-container">
 				<div className="dashboard-header">
-					<h1>Bonjour <span>{name}</span></h1>
+					{data && <h1>Welcome <span>{data.userInfos.firstName}</span></h1>}
+					{error && <h1>Error user not Found</h1>}
+					{loading && <h1>Loading...</h1>}
 					<p>{"Future subtext"}</p>
 				</div>
 				<Charts id={id} />
@@ -27,7 +28,7 @@ const Dashboard = ({ id }) => {
 };
 
 Dashboard.propTypes = {
-	id: PropTypes.number
+	id: PropTypes.number.isRequired
 };
 
 export default Dashboard;

@@ -4,10 +4,12 @@ import TopBar from "./components/sidebar/TopBar";
 import SideBar from "./components/sidebar/SideBar";
 import Dashboard from "./components/dashboard/Dashboard";
 
+let path = window.location.pathname;
+
+const id = parseInt(path.substring(path.lastIndexOf("/") + 1)) || 12;
+
 function App() {
 
-	let path = window.location.pathname;
-	const id = parseInt(path.substring(path.lastIndexOf("/") + 1)) || 12;
 
 	return (
 		<div className="app">

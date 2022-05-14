@@ -42,7 +42,7 @@ const BChart = ({ payload }) => {
 				</BarChart>
 			</ResponsiveContainer>
 		</>
-	) : <div></div>;
+	) : <></>;
 
 };
 
