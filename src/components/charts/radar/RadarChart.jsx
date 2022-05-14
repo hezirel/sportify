@@ -11,6 +11,7 @@ import PropTypes from "prop-types";
 
 import useFetch from "../../../js/useFetch";
 import Loader from "../Loader";
+import "./RadarChart.css";
 
 const RadarChart = ({ id }) => {
 

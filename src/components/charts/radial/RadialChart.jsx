@@ -1,6 +1,8 @@
 import { React } from "react";
 import { 
 	ResponsiveContainer,
+	RadialBarChart,
+	RadialBar,
 } from "recharts";
 
 import PropTypes from "prop-types";
@@ -8,6 +10,7 @@ import PropTypes from "prop-types";
 import useFetch from "../../../js/useFetch";
 import Loader from "../Loader";
 
+const score = data => data.score || data.todayScore;
 const RadialChart = ({ id }) => {
 
 	const { data, loading, error} = useFetch(`${id}`);
@@ -18,7 +21,29 @@ const RadialChart = ({ id }) => {
 
 			{data &&
 				<ResponsiveContainer width="100%" height="100%">
-					<div>{data.todayScore}</div>
+					<RadialBarChart
+						data={[
+							{score: (score(data)*100)},
+							{score: 100}
+						]}
+						startAngle={90}
+						endAngle={450}
+						innerRadius="70%"
+						outerRadius="100%"
+					>
+
+						<RadialBar 
+							dataKey="score"
+							fill="red"
+							label={{
+								position: "center",
+								fill: "black",
+								fontSize: "3vh",
+								children: `${score(data)*100}%`,
+							}}
+						>
+						</RadialBar>
+					</RadialBarChart>
 				</ResponsiveContainer>
 			}
 		</>

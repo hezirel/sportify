@@ -10,12 +10,12 @@
 
 .charts-radar {
 	grid-area: radar;
-	background-color: purple;
+	background-color: black;
+	color: white;
 }
 
 .charts-radial {
 	grid-area: radial;
-	background-color: orange;
 }
 
 .charts-keys {
