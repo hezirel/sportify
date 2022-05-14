@@ -1,7 +1,7 @@
 import { React } from "react";
 import { 
 	ResponsiveContainer,
-	RadarChart,
+	RadarChart as RadChart,
 	PolarAngleAxis,
 	Radar,
 	PolarGrid
@@ -12,7 +12,7 @@ import PropTypes from "prop-types";
 import useFetch from "../../../js/useFetch";
 import Loader from "../Loader";
 
-const RadChart = ({ id }) => {
+const RadarChart = ({ id }) => {
 
 	const { data, loading, error} = useFetch(`${id}/performance`);
 
@@ -23,7 +23,7 @@ const RadChart = ({ id }) => {
 			{data &&
 				<ResponsiveContainer width="100%" height="100%">
 
-					<RadarChart data={
+					<RadChart data={
 						data.data.map((item) => 
 							({
 								name: data.kind[item.kind],
@@ -35,7 +35,7 @@ const RadChart = ({ id }) => {
 						<PolarAngleAxis dataKey="name" />
 						<Radar dataKey="value" fill="var(--clr-primary)" />
 
-					</RadarChart>
+					</RadChart>
 				</ResponsiveContainer>
 			}
 		</>
@@ -43,8 +43,8 @@ const RadChart = ({ id }) => {
 
 };
 
-RadChart.propTypes = {
+RadarChart.propTypes = {
 	id: PropTypes.number.isRequired
 };
 
-export default RadChart;
+export default RadarChart;

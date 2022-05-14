@@ -11,8 +11,8 @@ const Loader = ({ ld, err }) => {
 };
 
 Loader.propTypes = {
-	ld: PropTypes.bool,
-	err: PropTypes.string
+	ld: PropTypes.bool.isRequired,
+	err: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired
 };
 
 export default Loader;

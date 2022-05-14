@@ -15,12 +15,16 @@ const useFetch = (options) => {
 			.then(async res => {
 				//#:Refactor status check with different err throw methods
 				if(!res.ok) {
-					setError(res.status);
+					setError(res.statusText);
 					setLoading(false);
 				} else {
 					res.json().then(data => setData(data.data))
 						.then(() => setLoading(false));
 				}
+			})
+			.catch(err => {
+				setError(err);
+				setLoading(false);
 			});
 
 	}, [options]);
