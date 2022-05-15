@@ -1,33 +1,31 @@
 import { React } from "react";
-import { 
-	ResponsiveContainer,
-} from "recharts";
 
 import PropTypes from "prop-types";
 
 import useFetch from "../../../js/useFetch";
 import Loader from "../Loader";
+import Icons from "../../../assets/icons/Icons";
 import "./KeyChart.css";
 
 const UNITS = [{
 	name: "Calories",
 	unit: "kCal",
-	icon: "fas fa-fire",
+	icon: <Icons.cal />
 },
 {
 	name: "Protein",
 	unit: "g",
-	icon: "fas fa-chicken",
+	icon: <Icons.pro />
 },
 {
 	name: "Carbohydrates",
 	unit: "g",
-	icon: "fas fa-apple",
+	icon: <Icons.carb />
 },
 {
 	name: "Lipids",
 	unit: "g",
-	icon: "fas fa-hambuer",
+	icon: <Icons.fat />
 }];
 
 const translate = (key) => {
@@ -37,6 +35,18 @@ const translate = (key) => {
 		"carbohydrateCount": "Carbohydrates",
 		"lipidCount": "Lipids",
 	})[key];
+};
+
+const Item = (data, index) => {
+	return (
+		<div key={index} className="charts-key-item">
+			<div className="charts-key-item-icon">
+				{data.icon}
+			</div>	
+			<span className="charts-key-item-value">{data.value}{data.unit}</span>
+			<span className="charts-key-item-name">{data.name}</span>
+		</div>
+	);
 };
 
 const KeyChart = ({ id }) => {
@@ -56,11 +66,7 @@ const KeyChart = ({ id }) => {
 	const renderList = (keyList) => {
 		console.log(keyList.map(e => e));
 		return (
-			keyList.map((elt, index) => {
-				return (
-					<li key={index}>{elt.name}</li>
-				);
-			})
+			keyList.map((data, index) => Item(data, index))
 		);
 	};
 
@@ -69,11 +75,9 @@ const KeyChart = ({ id }) => {
 			{(loading || error )&& <Loader ld={loading} err={error}/>}
 
 			{data &&
-				<ResponsiveContainer width="100%" height="100%">
-					<ul>
+					<>
 						{renderList(renderKey(data.keyData))}
-					</ul>
-				</ResponsiveContainer>
+					</>
 			}
 		</>
 	);
