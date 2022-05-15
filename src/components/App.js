@@ -3,7 +3,6 @@ import { React } from "react";
 import TopBar from "./sidebar/TopBar";
 import SideBar from "./sidebar/SideBar";
 import Dashboard from "./dashboard/Dashboard";
-import ChartWrapper from "../js/ChartWrapper";
 
 let path = window.location.pathname;
 
@@ -18,7 +17,7 @@ function App() {
 			<TopBar />
 			<SideBar />
 			<div className="app-content">
-				<ChartWrapper uri={`${id}`} Display={Dashboard} />
+				<Dashboard id={id}/>
 			</div>
 		</div>
 	);
