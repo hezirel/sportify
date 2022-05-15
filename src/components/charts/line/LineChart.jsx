@@ -44,7 +44,7 @@ const LinChart = ({ data }) => {
 						bottom: 5
 					}}
 				>
-
+					<text x={0} y={0}>LineChart</text>
 					<XAxis
 						dataKey="day"
 						tickLine={false}
