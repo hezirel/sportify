@@ -28,13 +28,13 @@ const UNITS = (key) => {
 
 const Item = (data, index) => {
 	return (
-		<div key={index} className="charts-key-item">
+		<li key={index} className="charts-key-item">
 			<div className="charts-key-item-icon">
 				{data.icon}
 			</div>	
 			<span className="charts-key-item-value">{data.value}{data.unit}</span>
 			<span className="charts-key-item-label">{data.name}</span>
-		</div>
+		</li>
 	);
 };
 
@@ -50,7 +50,7 @@ const renderKey = (keysData) => {
 
 const renderList = (keyData) => {
 	return (
-		renderKey(keyData).map((data, index) => Item(data, index))
+		[...renderKey(keyData)].map((data, index) => Item(data, index))
 	);
 };
 

@@ -9,12 +9,11 @@ import {
 import "./KeyChart.css";
 
 
-const KeyChart = ({ data }) => {
-
+const KeyChart = ({ data: {keyData: data} }) => {
 
 	return (
 		<>
-			{renderList((data.keyData))}
+			{renderList(data)}
 		</>
 	);
 

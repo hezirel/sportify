@@ -1,11 +1,12 @@
-.clr-primary {
-    fill: var(--clr-primary);
-}
-
 .bar-chart-calories {
     fill: var(--clr-primary);
 }
 
 .bar-chart-weight {
     fill: black;
+}
+
+.chartsBar {
+    grid-area: bar;
+    outline: 1px solid var(--clr-primary);
 }

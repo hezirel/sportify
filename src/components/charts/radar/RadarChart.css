@@ -3,3 +3,9 @@
 	font-weight: bold;
 	fill: white;
 }
+
+.chartsRadar {
+	grid-area: radar;
+	background-color: black;
+	color: white;
+}

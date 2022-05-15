@@ -1,8 +1,6 @@
 import { React } from "react";
 import PropTypes from "prop-types";
 
-import "./Charts.css";
-
 import BarChart from "./bar/BarChart";
 import RadarChart from "./radar/RadarChart";
 import RadialChart from "./radial/RadialChart";
@@ -12,24 +10,41 @@ import ChartWraper from "../../js/ChartWrapper";
 
 const Charts = ({ id }) => {
 
+	const chartList = [
+		{
+			chart: BarChart,
+			uri: `${id}/activity`,
+			css: "Bar"
+		},
+		{
+			chart: LineChart,
+			uri: `${id}/average-sessions`,
+			css: "Line"
+		},
+		{
+			chart: RadarChart,
+			uri: `${id}/performance`,
+			css: "Radar"
+		},
+		{
+			chart: RadialChart,
+			uri: `${id}`,
+			css: "Radial"
+		},
+		{
+			chart: KeyChart,
+			uri: `${id}`,
+			css: "Key"
+		},	
+	];
 	return (
-		<>
-			<div className="charts-bar" id="chart-bar">
-				<ChartWraper uri={`${id}/activity`} Display={BarChart} />
-			</div>
-			<div className="charts-line">
-				<ChartWraper uri={`${id}/average-sessions`} Display={LineChart} />
-			</div>   
-			<div className="charts-radar">
-				<ChartWraper uri={`${id}/performance`} Display={RadarChart} />
-			</div>   
-			<div className="charts-radial">
-				<ChartWraper uri={`${id}`} Display={RadialChart} />
-			</div>   
-			<div className="charts-keys">
-				<ChartWraper uri={`${id}`} Display={KeyChart} />
-			</div>
-		</>
+		chartList.map(({ chart, uri, css }, index) => {
+			return (
+				<div key={index} className={`charts${css}`} id={`chart${css}`}>
+					<ChartWraper uri={`${uri}`} Display={chart} />
+				</div>
+			);
+		})
 	);
 };
 
