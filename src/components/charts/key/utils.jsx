@@ -1,5 +1,5 @@
 import { React } from "react";
-import Icons from "../../../assets/icons/Icons";
+import Icons from "./Icons";
 
 const UNITS = (key) => {
 	return ({

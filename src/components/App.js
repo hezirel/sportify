@@ -1,7 +1,7 @@
 import "./App.css";
 import { React } from "react";
-import TopBar from "./components/sidebar/TopBar";
-import SideBar from "./components/sidebar/SideBar";
+import TopBar from "./sidebar/TopBar";
+import SideBar from "./sidebar/SideBar";
 import Dashboard from "./dashboard/Dashboard";
 import ChartWrapper from "../js/ChartWrapper";
 

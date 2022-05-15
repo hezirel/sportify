@@ -2,36 +2,26 @@ import { React } from "react";
 
 import PropTypes from "prop-types";
 
-import useFetch from "../../../js/useFetch";
-
 import {
 	renderList,
 } from "./utils";
 
-import Loader from "../Loader";
 import "./KeyChart.css";
 
 
-const KeyChart = ({ id }) => {
+const KeyChart = ({ data }) => {
 
-	const { data, loading, error} = useFetch(`${id}`);
 
 	return (
 		<>
-			{(loading || error )&& <Loader ld={loading} err={error}/>}
-
-			{data &&
-					<>
-						{renderList((data.keyData))}
-					</>
-			}
+			{renderList((data.keyData))}
 		</>
 	);
 
 };
 
 KeyChart.propTypes = {
-	id: PropTypes.number.isRequired
+	data: PropTypes.object.isRequired
 };
 
 export default KeyChart;

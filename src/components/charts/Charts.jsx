@@ -18,16 +18,16 @@ const Charts = ({ id }) => {
 				<ChartWraper uri={`${id}/activity`} Display={BarChart} />
 			</div>
 			<div className="charts-line">
-				<LineChart id={id} />
+				<ChartWraper uri={`${id}/average-sessions`} Display={LineChart} />
 			</div>   
 			<div className="charts-radar">
-				<RadarChart id={id} />
+				<ChartWraper uri={`${id}/performance`} Display={RadarChart} />
 			</div>   
 			<div className="charts-radial">
-				<RadialChart id={id} />
+				<ChartWraper uri={`${id}`} Display={RadialChart} />
 			</div>   
 			<div className="charts-keys">
-				<KeyChart id={id} />
+				<ChartWraper uri={`${id}`} Display={KeyChart} />
 			</div>
 		</>
 	);

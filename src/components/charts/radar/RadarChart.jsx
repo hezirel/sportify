@@ -9,43 +9,35 @@ import {
 
 import PropTypes from "prop-types";
 
-import useFetch from "../../../js/useFetch";
-import Loader from "../Loader";
 import "./RadarChart.css";
 
-const RadarChart = ({ id }) => {
-
-	const { data, loading, error} = useFetch(`${id}/performance`);
+const RadarChart = ({ data }) => {
 
 	return (
 		<>
-			{(loading || error )&& <Loader ld={loading} err={error}/>}
+			<ResponsiveContainer width="100%" height="100%">
 
-			{data &&
-				<ResponsiveContainer width="100%" height="100%">
+				<RadChart data={
+					data.data.map((item) => 
+						({
+							name: data.kind[item.kind],
+							value: item.value
+						}))
+				}>
 
-					<RadChart data={
-						data.data.map((item) => 
-							({
-								name: data.kind[item.kind],
-								value: item.value
-							}))
-					}>
+					<PolarGrid />
+					<PolarAngleAxis dataKey="name" />
+					<Radar dataKey="value" fill="var(--clr-primary)" />
 
-						<PolarGrid />
-						<PolarAngleAxis dataKey="name" />
-						<Radar dataKey="value" fill="var(--clr-primary)" />
-
-					</RadChart>
-				</ResponsiveContainer>
-			}
+				</RadChart>
+			</ResponsiveContainer>
 		</>
 	);
 
 };
 
 RadarChart.propTypes = {
-	id: PropTypes.number.isRequired
+	data: PropTypes.object.isRequired
 };
 
 export default RadarChart;
