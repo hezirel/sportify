@@ -36,7 +36,8 @@ const BChart = ({ data }) => {
 
 					/>
 					<XAxis dataKey="day" />
-					<YAxis dataKey="kg" orientation="right" />
+					<YAxis dataKey="kg"
+						orientation="right" />
 					<Tooltip payload={[]}/>
 					<Legend verticalAlign="top" align="right" margin={{
 						top: 0,

@@ -1,3 +1,7 @@
 .chartsLine {
 	grid-area: line;
 }
+
+.linChartResponsiveContainer {
+	background-color: var(--clr-primary);
+}
