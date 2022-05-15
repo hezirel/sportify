@@ -13,27 +13,27 @@ const Charts = ({ id }) => {
 	const chartList = [
 		{
 			chart: BarChart,
-			uri: `${id}/activity`,
+			uri: "/activity",
 			css: "Bar"
 		},
 		{
 			chart: LineChart,
-			uri: `${id}/average-sessions`,
+			uri: "/average-sessions",
 			css: "Line"
 		},
 		{
 			chart: RadarChart,
-			uri: `${id}/performance`,
+			uri: "/performance",
 			css: "Radar"
 		},
 		{
 			chart: RadialChart,
-			uri: `${id}`,
+			uri: "/",
 			css: "Radial"
 		},
 		{
 			chart: KeyChart,
-			uri: `${id}`,
+			uri: "/",
 			css: "Key"
 		},	
 	];
@@ -41,7 +41,7 @@ const Charts = ({ id }) => {
 		chartList.map(({ chart, uri, css }, index) => {
 			return (
 				<div key={index} className={`charts${css}`} id={`chart${css}`}>
-					<ChartWraper uri={`${uri}`} Display={chart} />
+					<ChartWraper uri={`${id}${uri}`} Display={chart} />
 				</div>
 			);
 		})
