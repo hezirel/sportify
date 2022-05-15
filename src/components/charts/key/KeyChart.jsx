@@ -6,7 +6,6 @@ import useFetch from "../../../js/useFetch";
 
 import {
 	renderList,
-	renderKey
 } from "./utils";
 
 import Loader from "../Loader";
@@ -23,7 +22,7 @@ const KeyChart = ({ id }) => {
 
 			{data &&
 					<>
-						{renderList(renderKey(data.keyData))}
+						{renderList((data.keyData))}
 					</>
 			}
 		</>
