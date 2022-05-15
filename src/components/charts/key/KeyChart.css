@@ -1,0 +1,36 @@
+.charts-key-item {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "keyIcon keyValue"
+    "keyIcon keyLabel";
+    background-color: #FBFBFB;   
+}
+
+.charts-key-item-icon {
+    grid-area: keyIcon;
+    padding: 1rem 0.6rem 1rem 1rem;
+}
+
+.charts-key-item-icon svg {
+    opacity: 0.8;
+}
+
+.charts-key-item-value {
+    grid-area: keyValue;
+    align-self: flex-end;
+    justify-self: start;
+    justify-items: baseline;
+    padding-bottom: 0.2rem;
+    font-weight: bold;
+    font-size: large;
+}
+
+.charts-key-item-label {
+    grid-area: keyLabel;
+    align-items: top;
+    justify-items: left;
+    font-weight: 200;
+    font-size: medium;
+}
