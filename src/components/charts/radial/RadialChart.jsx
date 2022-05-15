@@ -25,17 +25,14 @@ const RadialChart = ({ data }) => {
 					innerRadius="70%"
 					outerRadius="100%"
 				>
-
+					<text fill="black" textAnchor="middle" dominantBaseline="central">
+						<tspan x="50%" y="45%" fontSize="28" fontWeight="bolder">{`${score(data) * 100}%`}</tspan>
+						<tspan x="50%" y="56%" fill="grey" fontSize="14">{"de votre"}</tspan>
+						<tspan x="50%" y="63%" fill="grey" fontSize="14">{"objectif"}</tspan>
+					</text>
 					<RadialBar 
 						dataKey="score"
-						fill="red"
-						label={{
-							position: "center",
-							fill: "black",
-							fontSize: "3vh",
-							children: `${score(data)*100}%`,
-						}}
-					>
+						fill="var(--clr-primary)">
 					</RadialBar>
 				</RadialBarChart>
 			</ResponsiveContainer>
