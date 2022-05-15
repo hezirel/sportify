@@ -44,7 +44,22 @@ const LinChart = ({ data }) => {
 						bottom: 5
 					}}
 				>
-					<text x={0} y={0}>LineChart</text>
+					<text 
+						x={10}
+						y={30}
+						fill="white"
+						fillOpacity={0.7}
+					>
+					Durée moyenne des
+					</text>
+					<text 
+						x={10}
+						y={45}
+						fill="white"
+						fillOpacity={0.7}
+					>
+					sessions
+					</text>
 					<XAxis
 						dataKey="day"
 						tickLine={false}
@@ -75,7 +90,7 @@ const LinChart = ({ data }) => {
 						dataKey="sessionLength"
 						stroke="white"
 						type="natural"
-						strokeWidth={4}
+						strokeWidth={2}
 						activeDot={{
 							stroke: "white",
 							strokeWidth: 5,
@@ -83,8 +98,7 @@ const LinChart = ({ data }) => {
 						}}
 						dot={{
 							stroke: "white",
-							strokeWidth: 1,
-							r: 1,
+							r: 0,
 						}}
 						name="Session Length"
 						unit="min"
