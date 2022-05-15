@@ -30,12 +30,16 @@ const BChart = ({ data }) => {
 							day: parseDay(item.day),
 							kg: item.kilogram,
 							cal: item.calories
-						}))} 
+						}))}
 				>
-					<CartesianGrid strokeDasharray="2" vertical={false}
+					<CartesianGrid
+						strokeDasharray="2"
+						vertical={false}
 
 					/>
-					<XAxis dataKey="day" />
+					<XAxis
+						dataKey="day"
+					/>
 					<YAxis dataKey="kg"
 						orientation="right" />
 					<Tooltip payload={[]}/>

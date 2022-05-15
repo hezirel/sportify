@@ -22,8 +22,8 @@ const RadialChart = ({ data }) => {
 					]}
 					startAngle={90}
 					endAngle={450}
-					innerRadius="90%"
-					outerRadius="100%"
+					innerRadius="80%"
+					outerRadius="90%"
 				>
 					<text 
 						x={10}
@@ -32,7 +32,7 @@ const RadialChart = ({ data }) => {
 						fontWeight="bolder"
 					>Score</text>
 					<text fill="black" textAnchor="middle" dominantBaseline="central">
-						<tspan x="50%" y="45%" fontSize="28" fontWeight="bolder">{`${score(data) * 100}%`}</tspan>
+						<tspan x="52%" y="46%" fontSize="28" fontWeight="bolder">{`${score(data) * 100}%`}</tspan>
 						<tspan x="50%" y="56%" fill="grey" fontSize="14">{"de votre"}</tspan>
 						<tspan x="50%" y="63%" fill="grey" fontSize="14">{"objectif"}</tspan>
 					</text>
@@ -42,10 +42,12 @@ const RadialChart = ({ data }) => {
 						dataKey={"value"}
 						angleAxisId={0}
 						tick={false}
+						margin={{top: 50, bottom: 0}}
 					/>
 					<RadialBar 
 						dataKey="score"
 						fill="var(--clr-primary)"
+						cornerRadius={10}
 					>
 					</RadialBar>
 				</RadialBarChart>
