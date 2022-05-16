@@ -31,6 +31,8 @@ const BChart = ({ data }) => {
 							kg: item.kilogram,
 							cal: item.calories
 						}))}
+				barGap={8}
+				barCategoryGap="30%"
 				>
 					<CartesianGrid
 						strokeDasharray="2"
@@ -39,10 +41,13 @@ const BChart = ({ data }) => {
 					/>
 					<XAxis
 						dataKey="day"
+						tickLine={false}
+						axisLine={false}
 					/>
 					<YAxis dataKey="kg"
 						orientation="right"
 						domain={["dataMin", "dataMax"]}
+						tickCount="4"
 
 					/>
 					<YAxis dataKey="cal"
@@ -59,9 +64,13 @@ const BChart = ({ data }) => {
 					}}
 					iconType="circle"
 					/>
-					<Bar dataKey="kg" fill="black" />
-					<Bar dataKey="cal" fill="var(--clr-primary)"
-						yAxisId="calAxis" />
+					<Bar dataKey="kg"
+						fill="black" />
+					<Bar dataKey="cal"
+						fill="var(--clr-primary)"
+						yAxisId="calAxis"
+						radius={[30, 30, 0, 0]}
+					/>
 				</BarChart>
 			</ResponsiveContainer>
 		</>
