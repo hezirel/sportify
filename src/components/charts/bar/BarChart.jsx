@@ -88,13 +88,32 @@ const BChart = ({ data }) => {
 									<div style={{
 										background: "var(--clr-primary)",
 										padding: "0.8rem 0.3rem 0.8rem 0.3rem",
+										display: "flex",
+										justifyContent: "space-evenly",
+										alignItems: "center",
+										flexDirection: "column",
+										gap: "1.3rem",
+										fontSize: "0.8em",
+									
 									}}>
 										<p style={{
 											margin: 0,
 											padding: 0,
 											fontWeight: "bolder",
-											color: "white"
-										}}></p>
+											color: "white",
+											paddingLeft: "0.4rem",
+											paddingRight: "0.4rem",
+											paddingTop: "0.6rem",
+										}}>{`${payload[0].value}`}kg</p>
+										<p style={{
+											margin: 0,
+											padding: 0,
+											fontWeight: "bolder",
+											color: "white",
+											paddingLeft: "0.4rem",
+											paddingRight: "0.4rem",
+											paddingBottom: "0.6rem",
+										}}>{`${payload[1].value}`}Kcal</p>
 									</div>
 								);
 							}

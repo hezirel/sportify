@@ -1,6 +1,6 @@
 .charts-key-item {
     display: grid;
-    grid-template-columns: 0.3fr 1fr;
+    grid-template-columns: 0.4fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
     "keyIcon keyValue"
@@ -12,9 +12,10 @@
 
 .charts-key-item-icon {
     grid-area: keyIcon;
-    padding: 0 0.5em 0 0.5em;
+    padding-left: 0.5em;
     display: flex;
     align-items: center;
+    margin-right: 1rem;
 
 }
 
