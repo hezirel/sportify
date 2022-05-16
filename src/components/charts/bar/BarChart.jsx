@@ -41,7 +41,10 @@ const BChart = ({ data }) => {
 						dataKey="day"
 					/>
 					<YAxis dataKey="kg"
-						orientation="right" />
+						orientation="right"
+						domain={["dataMin", "dataMax"]}
+
+					/>
 					<YAxis dataKey="cal"
 						orientation="left"
 						yAxisId="calAxis"
