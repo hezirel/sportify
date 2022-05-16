@@ -42,6 +42,11 @@ const BChart = ({ data }) => {
 					/>
 					<YAxis dataKey="kg"
 						orientation="right" />
+					<YAxis dataKey="cal"
+						orientation="left"
+						yAxisId="calAxis"
+						domain={[0, "auto"]} 
+						hide={true}			/>
 					<Tooltip payload={[]}/>
 					<Legend verticalAlign="top" align="right" margin={{
 						top: 0,
@@ -52,7 +57,8 @@ const BChart = ({ data }) => {
 					iconType="circle"
 					/>
 					<Bar dataKey="kg" fill="black" />
-					<Bar dataKey="cal" fill="var(--clr-primary)" />
+					<Bar dataKey="cal" fill="var(--clr-primary)"
+						yAxisId="calAxis" />
 				</BarChart>
 			</ResponsiveContainer>
 		</>

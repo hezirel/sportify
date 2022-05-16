@@ -12,7 +12,7 @@
 
 .charts-key-item-icon {
     grid-area: keyIcon;
-    padding: 1em;
+    padding: 0 0.5em 0 0.5em;
     display: flex;
     align-items: center;
 
@@ -27,7 +27,6 @@
     align-self: flex-end;
     justify-self: start;
     justify-items: baseline;
-    padding-bottom: 0.2rem;
     font-weight: bold;
     font-size: 1.6em;
 }
@@ -45,7 +44,5 @@
     display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr 1fr 1fr 1fr;
-	gap: 3em;
-    padding-left: 0.4em;
-    padding-bottom: 2rem;
+	gap: 8%;
 }

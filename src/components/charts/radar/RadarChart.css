@@ -1,5 +1,5 @@
 .recharts-polar-angle-axis-tick-value {
-	font-size: 1.2em;
+	font-size: 1em;
 	font-weight: bold;
 	fill: white;
 }
@@ -8,4 +8,5 @@
 	grid-area: radar;
 	background-color: black;
 	color: white;
+	padding: 0.1em;
 }

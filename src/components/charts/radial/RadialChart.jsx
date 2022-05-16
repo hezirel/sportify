@@ -15,7 +15,7 @@ const RadialChart = ({ data }) => {
 
 	return (
 		<>
-			<ResponsiveContainer width="100%" height="100%">
+			<ResponsiveContainer width="100%">
 				<RadialBarChart
 					data={[
 						{score: (score(data)*100)},
