@@ -29,6 +29,7 @@ const RadarChart = ({ data }) => {
 					/>
 					<PolarAngleAxis 
 						dataKey="name"
+						textAnchor="middle"
 					/>
 					<Radar
 						name="Radar"			

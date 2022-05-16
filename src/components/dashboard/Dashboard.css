@@ -1,7 +1,7 @@
 .dashboard-container {
     grid-area: app;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 0.05fr repeat(2, 1fr);
     grid-template-areas: 
         "header-app header-app header-app header-app"
