@@ -5,10 +5,10 @@ import "./Loader.css";
 
 const Loader = ({ ld, err }) => {
 	return (
-		<div className="loader">
-			{ld && <div className="loaderLoad">Retrieving data, please wait ...</div>}
+		<>
+			{ld && <div className="lds-ripple"><div></div><div></div><div></div><div></div></div>}
 			{err && <div className="loaderErr">{err}</div>}
-		</div>
+		</>
 	);
 };
 
