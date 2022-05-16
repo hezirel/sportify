@@ -55,8 +55,9 @@ const BChart = ({ data }) => {
 						orientation="left"
 						yAxisId="calAxis"
 						domain={[0, "auto"]} 
-						hide={true}			/>
-					<Tooltip payload={[]}/>
+						hide={true}
+					/>
+
 					<Legend verticalAlign="top" align="right" margin={{
 						top: 0,
 						right: 50,
@@ -75,6 +76,29 @@ const BChart = ({ data }) => {
 						yAxisId="calAxis"
 						radius={[30, 30, 0, 0]}
 						minPointSize={15}
+					/>
+					<Tooltip
+						cursor={{
+							fill: "grey",
+							fillOpacity: 0.4,
+						}}
+						content={({ payload, active }) => {
+							if (active && payload ) {
+								return (
+									<div style={{
+										background: "var(--clr-primary)",
+										padding: "0.8rem 0.3rem 0.8rem 0.3rem",
+									}}>
+										<p style={{
+											margin: 0,
+											padding: 0,
+											fontWeight: "bolder",
+											color: "white"
+										}}></p>
+									</div>
+								);
+							}
+						}}
 					/>
 				</BarChart>
 			</ResponsiveContainer>
