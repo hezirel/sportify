@@ -6,11 +6,16 @@
     "keyIcon keyValue"
     "keyIcon keyLabel";
     background-color: #FBFBFB;   
+    padding: 0.5em 0.3em 0.5em 0.3em;
+    border-radius: 20px;
 }
 
 .charts-key-item-icon {
     grid-area: keyIcon;
-    padding: 1rem 0.6rem 1rem 1rem;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+
 }
 
 .charts-key-item-icon svg {
@@ -24,6 +29,7 @@
     justify-items: baseline;
     padding-bottom: 0.2rem;
     font-weight: bold;
+    font-size: 1.6em;
 }
 
 .charts-key-item-label {
@@ -31,6 +37,7 @@
     align-items: top;
     justify-items: left;
     font-weight: 200;
+    font-size: 1.2em;
 }
 
 .chartsKey {
@@ -38,6 +45,7 @@
     display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr 1fr 1fr 1fr;
-	gap: 1rem;
+	gap: 3.4em;
 	justify-content: space-around;
+    padding-left: 0.4em;
 }
