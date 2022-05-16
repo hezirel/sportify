@@ -22,7 +22,9 @@ const BChart = ({ data }) => {
 
 	return (
 		<>
-			<ResponsiveContainer>
+			<div className="barChartTitle">Activité Quotidienne</div>
+			<ResponsiveContainer
+			>
 				<BarChart data={
 
 					data.sessions.map((item) => 
@@ -33,6 +35,12 @@ const BChart = ({ data }) => {
 						}))}
 				barGap={8}
 				barCategoryGap="30%"
+				style={{ 
+					display: "flex",
+					justifyItems: "end",
+					alignItems: "bottom",
+
+				}}
 				>
 					<CartesianGrid
 						strokeDasharray="2"

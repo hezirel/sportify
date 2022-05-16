@@ -6,7 +6,13 @@
     fill: black;
 }
 
+.barChartTitle {
+    padding: 1rem;
+    font-weight: bold;
+}
+
 .chartsBar {
     grid-area: bar;
-    outline: 1px solid var(--clr-primary);
+    display: grid;
+    grid-template-rows: 0.3fr 1fr;
 }
