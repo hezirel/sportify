@@ -32,9 +32,9 @@ const RadialChart = ({ data }) => {
 						fontWeight="bolder"
 					>Score</text>
 					<text fill="black" textAnchor="middle" dominantBaseline="central">
-						<tspan x="52%" y="46%" fontSize="28" fontWeight="bolder">{`${score(data) * 100}%`}</tspan>
-						<tspan x="50%" y="56%" fill="grey" fontSize="14">{"de votre"}</tspan>
-						<tspan x="50%" y="63%" fill="grey" fontSize="14">{"objectif"}</tspan>
+						<tspan x="52%" y="46%" fontSize="3em" fontWeight="bolder">{`${score(data) * 100}%`}</tspan>
+						<tspan x="50%" y="56%" fill="grey" fontSize="1em">{"de votre"}</tspan>
+						<tspan x="50%" y="61%" fill="grey" fontSize="1em">{"objectif"}</tspan>
 					</text>
 					<PolarAngleAxis
 						type="number"

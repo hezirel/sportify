@@ -26,8 +26,27 @@ const RadarChart = ({ data }) => {
 				}>
 
 					<PolarGrid />
-					<PolarAngleAxis dataKey="name" />
-					<Radar dataKey="value" fill="var(--clr-primary)" />
+					<PolarAngleAxis 
+						dataKey="name"
+						tick={{ 
+							fontSize: "1em",
+							fontWeight: "bolder",
+							fontFamily: "Menlo",
+							fill: "white",
+							padding: { 
+								bottom: 20,
+								left: 0,
+								right: 0,
+								top: 20
+							}
+						}}
+					/>
+					<Radar
+						name="Radar"			
+						dataKey="value" 
+						fill="var(--clr-primary)"
+						fillOpacity="0.6"
+					/>
 
 				</RadChart>
 			</ResponsiveContainer>

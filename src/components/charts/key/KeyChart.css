@@ -45,7 +45,7 @@
     display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr 1fr 1fr 1fr;
-	gap: 3.4em;
-	justify-content: space-around;
+	gap: 3em;
     padding-left: 0.4em;
+    padding-bottom: 2rem;
 }
