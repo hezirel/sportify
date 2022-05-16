@@ -47,7 +47,8 @@ const BChart = ({ data }) => {
 					<YAxis dataKey="kg"
 						orientation="right"
 						domain={["dataMin", "dataMax"]}
-						tickCount="4"
+						tickCount={4}
+						axisLine={false}
 
 					/>
 					<YAxis dataKey="cal"
@@ -65,11 +66,15 @@ const BChart = ({ data }) => {
 					iconType="circle"
 					/>
 					<Bar dataKey="kg"
-						fill="black" />
+						radius={[30, 30, 0, 0]}
+						fill="black"
+						minPointSize={15}
+					/>
 					<Bar dataKey="cal"
 						fill="var(--clr-primary)"
 						yAxisId="calAxis"
 						radius={[30, 30, 0, 0]}
+						minPointSize={15}
 					/>
 				</BarChart>
 			</ResponsiveContainer>
