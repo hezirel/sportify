@@ -10,7 +10,6 @@ import {
 	YAxis,
 	CartesianGrid,
 	Tooltip,
-	Legend,
 	ResponsiveContainer
 } from "recharts";
 
@@ -22,7 +21,19 @@ const BChart = ({ data }) => {
 
 	return (
 		<>
-			<div className="barChartTitle">Activité Quotidienne</div>
+			<div className="barChartHeader">
+				<h3>Daily Activity</h3>
+				<div className="barChartLegend">
+					<span>
+						<span className="dot"></span>
+						{"Poids (kg)"}
+					</span>
+					<span>
+						<span className="dotRed"></span>
+						{"Calories brulées (kCal)"}
+					</span>
+				</div>
+			</div>
 			<ResponsiveContainer
 			>
 				<BarChart data={
@@ -66,14 +77,6 @@ const BChart = ({ data }) => {
 						hide={true}
 					/>
 
-					<Legend verticalAlign="top" align="right" margin={{
-						top: 0,
-						right: 50,
-						bottom: 10,
-						left: 0
-					}}
-					iconType="circle"
-					/>
 					<Bar dataKey="kg"
 						radius={[30, 30, 0, 0]}
 						fill="black"
