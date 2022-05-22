@@ -1,4 +1,11 @@
-import { React } from "react";
+import { 
+	React
+} from "react";
+
+import PropTypes from "prop-types";
+
+import "./RadialChart.css";
+
 import { 
 	ResponsiveContainer,
 	RadialBarChart,
@@ -6,9 +13,13 @@ import {
 	PolarAngleAxis
 } from "recharts";
 
-import PropTypes from "prop-types";
-import "./RadialChart.css";
 
+/**
+ * Radial chart component
+ * Transform api Data to display them in chart
+ * @param  {object} {data} - Data received from API
+ * @returns {React.ReactElement}
+ */
 const RadialChart = ({ data }) => {
 
 	const score = data => data.score || data.todayScore;

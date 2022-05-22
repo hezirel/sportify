@@ -1,7 +1,10 @@
 import { 
 	React, 
 } from "react";
+
 import PropTypes from "prop-types";
+
+import "./BarChart.css";
 
 import { 
 	BarChart,
@@ -13,8 +16,13 @@ import {
 	ResponsiveContainer
 } from "recharts";
 
-import "./BarChart.css";
 
+/**
+ * Bar chart component
+ * Transform api Data to display them in chart
+ * @param  {object} {data} - Data received from API
+ * @returns {React.ReactElement}
+ */
 const BChart = ({ data }) => {
 
 	const parseDay = (day) => new Date(day).getDate();

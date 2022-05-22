@@ -1,4 +1,10 @@
-import { React } from "react";
+import { 
+	React
+} from "react";
+
+import PropTypes from "prop-types";
+
+import "./LineChart.css";
 
 import {
 	ResponsiveContainer,
@@ -8,12 +14,13 @@ import {
 	XAxis,
 	YAxis,
 } from "recharts";
-import PropTypes from "prop-types";
 
-
-import "./LineChart.css";
-
-
+/**
+ * Line chart component
+ * Transform api Data to display them in chart
+ * @param  {object} {data} - Data received from API
+ * @returns {React.ReactElement}
+ */
 const LinChart = ({ data }) => {
 
 	const dayTranslate = (day) => {

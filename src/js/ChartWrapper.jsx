@@ -8,6 +8,9 @@ import useFetch from "./useFetch";
 import Loader from "./loader/Loader";
 /**
  * Handle Error and Loading states for chart component passed as Display
+ * Display loader while fetching data
+ * Display error message if any
+ * Display charts if data is ok
  * @component
  * @type {React.FunctionComponent}
  * @param  {string} {uri} - The uri of the API endpoint to fetch

@@ -1,4 +1,11 @@
-import { React } from "react";
+import { 
+	React
+} from "react";
+
+import PropTypes from "prop-types";
+
+import "./RadarChart.css";
+
 import { 
 	ResponsiveContainer,
 	RadarChart as RadChart,
@@ -7,10 +14,12 @@ import {
 	PolarGrid,
 } from "recharts";
 
-import PropTypes from "prop-types";
-
-import "./RadarChart.css";
-
+/**
+ * Radar chart component
+ * Transform api Data to display them in chart
+ * @param  {object} {data} - Data received from API
+ * @returns {React.ReactElement}
+ */
 const RadarChart = ({ data }) => {
 
 	return (
