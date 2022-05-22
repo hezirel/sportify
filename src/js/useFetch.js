@@ -10,7 +10,7 @@ const useFetch = (options) => {
 
 	useEffect(() => {
 
-		fetch(`${API_URL}${options}`)
+		fetch(`${API_URL}/user/${options}`)
 			.then(async res => {
 				//#:Refactor status check with different err throw methods
 				if(!res.ok) {
