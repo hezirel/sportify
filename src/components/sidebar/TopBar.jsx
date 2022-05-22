@@ -4,7 +4,7 @@ import {
 
 import "./TopBar.css";
 
-import list from "./menuList";
+import list from "./MenuList";
 import logo from "../../assets/logo.png";
 
 /**

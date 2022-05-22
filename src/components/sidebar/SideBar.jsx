@@ -14,9 +14,9 @@ const SideBar = () => {
 
 	return (
 		<aside className="side-bar">
-			{activities.map((item, index) => 
+			{activities.map((Item, index) => 
 				<li className="activities-list-items" key={index}>
-					{item}
+					{<Item/>}
 				</li>
 			)}
 		</aside>

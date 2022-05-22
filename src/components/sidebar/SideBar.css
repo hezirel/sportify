@@ -16,5 +16,9 @@
 .activities-list-items {
     display: block;
     text-align: center;
-    padding: 0.3rem 0;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
 }
