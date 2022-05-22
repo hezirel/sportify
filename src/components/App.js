@@ -1,17 +1,23 @@
+import { 
+	React
+} from "react";
+
+import PropTypes from "prop-types";
+
 import "./App.css";
-import { React } from "react";
+
 import TopBar from "./sidebar/TopBar";
 import SideBar from "./sidebar/SideBar";
 import Dashboard from "./dashboard/Dashboard";
 
-let path = window.location.pathname;
-
-//#:match params
-const id = parseInt(path.substring(path.lastIndexOf("/") + 1)) || 12;
-
-function App() {
-
-
+/**
+ * Application main entry point, does basic UI layout
+ * @component
+ * @type {React.FunctionComponent}
+ * @param  {number} id - The id of the user for which to retrieve data
+ * @returns {React.ReactElement}
+ */
+const App = ({ id }) => {
 	return (
 		<div className="app">
 			<TopBar />
@@ -21,6 +27,13 @@ function App() {
 			</div>
 		</div>
 	);
-}
+};
+
+App.propTypes = {
+	/**
+	 * User's ID
+	 */
+	id: PropTypes.number.isRequired
+};
 
 export default App;

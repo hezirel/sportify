@@ -1,7 +1,17 @@
-import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import API_URL from "./env";
+import { 
+	useEffect,
+	useState
+} from "react";
 
+import PropTypes from "prop-types";
+
+import API_URL from "./env";
+/**
+ * Fetch service for useFetch hook
+ * @function
+ * @param  {string} options - The endpoint of the API to fetch
+ * @return {boolean, object, string} - The status of the fetch, the data fetched, or the error status text if any
+ */
 const useFetch = (options) => { 
 
 	const [data, setData] = useState();

@@ -6,7 +6,13 @@ import PropTypes from "prop-types";
 
 import useFetch from "./useFetch";
 import Loader from "./loader/Loader";
-
+/**
+ * Handle Error and Loading states for chart component passed as Display
+ * @component
+ * @type {React.FunctionComponent}
+ * @param  {string} {uri} - The uri of the API endpoint to fetch
+ * @param  {React.Component} {Display} - The chart component used for displaying data
+ */
 const ChartWrapper = ({ uri, Display }) => {
 
 	const { data, loading, error} = useFetch(`${uri}`);
