@@ -1,5 +1,9 @@
 # Sportify - API Data Analytics Dashboard
 
+## Screenshot
+
+![Website screenshot](/src/assets/screenshot.png "Screenshot")
+
 ## General Informations
 
 Sportify is the 12th project of my Open Classrooms JavaScript / React Developper Diploma.
