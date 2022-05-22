@@ -23,17 +23,16 @@ import {
  */
 const LinChart = ({ data }) => {
 
-	const dayTranslate = (day) => {
-		return ({
-			"1": "M",
-			"2": "T",
-			"3": "W",
-			"4": "T",
-			"5": "F",
-			"6": "S",
-			"7": "S",
-		})[day];
-	};
+	const dayTranslate = [
+		"X",
+		"M",
+		"T",
+		"W",
+		"T",
+		"F",
+		"S",
+		"S",
+	];
 
 	return (
 		<>
@@ -56,14 +55,16 @@ const LinChart = ({ data }) => {
 						y={30}
 						fill="white"
 						fillOpacity={0.7}
+						fontSize="1.5em"
 					>
 					Durée moyenne des
 					</text>
 					<text 
 						x={10}
-						y={45}
+						y={50}
 						fill="white"
 						fillOpacity={0.7}
+						fontSize="1.5em"
 					>
 					sessions
 					</text>
@@ -87,11 +88,12 @@ const LinChart = ({ data }) => {
 								left: 10,
 							},
 						}}
-						tickFormatter={(tick) => `${dayTranslate(tick)}`}
+						tickFormatter={(tick) => `${dayTranslate[tick]}`}
 					/>
 					<YAxis 
 						dataKey="sessionLength"
 						hide={true}
+						padding={{ left: 0, right: 0, top: 40, bottom: 60 }}
 					/>
 					<Line
 						dataKey="sessionLength"
@@ -109,6 +111,7 @@ const LinChart = ({ data }) => {
 						}}
 						name="Session Length"
 						unit="min"
+						
 					/>
 					<Tooltip
 						cursor={{
