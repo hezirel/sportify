@@ -1,9 +1,16 @@
-import logo from "../../assets/logo.png";
+import { 
+	React
+} from "react";
+
 import "./TopBar.css";
-import React from "react";
+
 import list from "./menuList";
+import logo from "../../assets/logo.png";
 
-
+/**
+ * Construct TopBar HTML component
+ * @returns {React.ReactElement} - TopBar HTML component
+ */
 const TopBar = () => {
 
 	return (

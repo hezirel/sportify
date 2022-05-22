@@ -1,7 +1,15 @@
+import { 
+	React
+} from "react";
+
 import "./SideBar.css";
-import React from "react";
+
 import activities from "./activitiesList";
 
+/**
+ * Construct SideBar HTML component
+ * @returns {React.ReactElement} - TopBar HTML component
+ */
 const SideBar = () => {
 
 	return (
