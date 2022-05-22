@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-
-const URL = "http://192.168.0.51:3000/user/";
+import API_URL from "./env";
 
 const useFetch = (options) => { 
 
@@ -11,7 +10,7 @@ const useFetch = (options) => {
 
 	useEffect(() => {
 
-		fetch(`${URL}${options}`)
+		fetch(`${API_URL}${options}`)
 			.then(async res => {
 				//#:Refactor status check with different err throw methods
 				if(!res.ok) {
