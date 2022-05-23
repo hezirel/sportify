@@ -15,7 +15,7 @@ import {
 } from "./mock";
 
 const search = new URLSearchParams(window.location.search);
-const mock = search.has("source") ? search.get("source") === "mock" : false;
+const mock = search.has("mock");
 
 
 /**
@@ -33,8 +33,6 @@ const useFetch = ({options, id}) => {
 
 	useEffect(() => {
 
-		//€:fetch local json, add timeout before setData,
-		//€:regex condition for data template validation
 		if (!mock) {
 			fetch(`${API_URL}/user/${options}`)
 				.then(async res => {
@@ -52,20 +50,18 @@ const useFetch = ({options, id}) => {
 				});
 		} else {
 
+			let match = options.match(/\b([a-z/-]+)\b/gi) || "/";
+
 			let res = {
-				"/": USER_MAIN_DATA.filter(item => item.id === id),
-				"/activity": USER_ACTIVITY.filter(item => item.userId === id),
-				"/performance": USER_PERFORMANCE.filter(item => item.userId === id),
-				"/average-sessions": USER_AVERAGE_SESSIONS.filter(item => item.userId === id)
-			}(options);
+				"/": USER_MAIN_DATA.find(item => item.id === id),
+				"/activity": USER_ACTIVITY.find(item => item.userId === id),
+				"/performance": USER_PERFORMANCE.find(item => item.userId === id),
+				"/average-sessions": USER_AVERAGE_SESSIONS.find(item => item.userId === id)
+			}[match];
 
-			setLoading(true);
-			setTimeout(() => {
-				setData(res);
-				setLoading(false);
-			}, 3000);
+			setData(res);
+			setLoading(false);
 
-			return res;
 		}
 
 	}, [options]);
