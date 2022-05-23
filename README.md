@@ -74,8 +74,19 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 The user ID used for retrieving data is to `12` by default
 
-To change this value add an integer at the end of the URL
+To change this value add an &id param to the URL
 
 #### Available Users ID
 
 [ `12` || `18` ]
+
+### Data source
+
+The website data source can be switched between API and mocked data by adding or not a &mock param in the URL
+
+### Examples
+
+```http
+http://localhost:3000/?id=12&mock
+http://localhost:3000/?id=18
+```
