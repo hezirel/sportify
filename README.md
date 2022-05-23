@@ -24,6 +24,20 @@ The backend for this project is available on [this repo from OpenClassrooms](htt
 
 ### Frontend
 
+#### Versions
+
+- Node ~18.0.0
+- React ^18.1.0
+
+#### Dependencies
+
+The Recharts package has not yet been upgraded to React ^18
+While installing npm dependencies packages please use the following flag
+
+```
+npm install --legacy-peer-deps
+```
+
 #### Environnement Variables
 
 The address of the API server must be set in [src/js/env.js](src/js/env.js)
