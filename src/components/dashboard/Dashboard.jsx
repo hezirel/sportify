@@ -20,7 +20,7 @@ import useFetch from "../../js/useFetch";
  */
 const Dashboard = ({ id }) => {
 
-	const { data, loading, error} = useFetch(`${id}`);
+	const { data, loading, error} = useFetch({options: "/", id});
 
 	return (
 		<>

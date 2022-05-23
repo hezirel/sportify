@@ -15,10 +15,11 @@ import Loader from "./loader/Loader";
  * @type {React.FunctionComponent}
  * @param  {string} {uri} - The uri of the API endpoint to fetch
  * @param  {React.Component} {Display} - The chart component used for displaying data
+ * @param {string} {id} - The id of the user to fetch data for
  */
-const ChartWrapper = ({ uri, Display }) => {
+const ChartWrapper = ({ uri, Display, id }) => {
 
-	const { data, loading, error} = useFetch(`${uri}`);
+	const { data, loading, error} = useFetch({options: uri, id});
 
 	return (
 		<>
@@ -33,6 +34,7 @@ const ChartWrapper = ({ uri, Display }) => {
 };
 
 ChartWrapper.propTypes = {
+	id: PropTypes.number,
 	uri: PropTypes.string.isRequired,
 	Display: PropTypes.func.isRequired
 };

@@ -4,8 +4,8 @@ import "./index.css";
 import App from "./components/App";
 
 
-let path = window.location.pathname;
-const id = parseInt(path.substring(path.lastIndexOf("/") + 1)) || 12;
+let search = new URLSearchParams(window.location.search);
+const id = search.has("id") ? parseInt(search.get("id")) : 12;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

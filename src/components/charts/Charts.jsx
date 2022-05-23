@@ -19,7 +19,7 @@ const chartList = [
 	{
 		chart: BarChart,
 		uri: "/activity",
-		css: "Bar"
+		css: "Bar",
 	},
 	{
 		chart: LineChart,
@@ -57,7 +57,7 @@ const Charts = ({ id }) => {
 		chartList.map(({ chart, uri, css }, index) => {
 			return (
 				<div key={index} className={`charts${css}`} id={`chart${css}`}>
-					<ChartWraper uri={`${id}${uri}`} Display={chart} />
+					<ChartWraper uri={`${id}${uri}`} Display={chart} id={id}/>
 				</div>
 			);
 		})
