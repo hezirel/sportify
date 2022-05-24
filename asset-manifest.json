@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/sportify/static/css/main.4ecb6d58.css",
+    "main.js": "/sportify/static/js/main.fadcd569.js",
+    "static/media/logo.png": "/sportify/static/media/logo.337e8febecea24c0c4b1.png",
+    "static/media/icon_swim.svg": "/sportify/static/media/icon_swim.bc12b705d445672f550a8441d581c700.svg",
+    "static/media/icon_bicycle.svg": "/sportify/static/media/icon_bicycle.fe885ecda828d3e2f637bb3b675db76c.svg",
+    "static/media/carb.svg": "/sportify/static/media/carb.e31766d46f28b184e423cb8dfaeaea1c.svg",
+    "static/media/fat.svg": "/sportify/static/media/fat.47dcdaf5b06b7706d5821a466e625c87.svg",
+    "static/media/pro.svg": "/sportify/static/media/pro.02f31ceec4e206ec7925ac35d7ae35c9.svg",
+    "static/media/icon_zen.svg": "/sportify/static/media/icon_zen.76760efccddf14928ee9263744c1b6e6.svg",
+    "static/media/cal.svg": "/sportify/static/media/cal.a700f2ea076f26f12a92359c5fbbfee1.svg",
+    "static/media/icon_weight.svg": "/sportify/static/media/icon_weight.9d22814b98d0ca386d9ddacded4eae80.svg",
+    "index.html": "/sportify/index.html",
+    "main.4ecb6d58.css.map": "/sportify/static/css/main.4ecb6d58.css.map",
+    "main.fadcd569.js.map": "/sportify/static/js/main.fadcd569.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4ecb6d58.css",
+    "static/js/main.fadcd569.js"
+  ]
+}
