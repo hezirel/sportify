@@ -1,4 +1,4 @@
-.side-bar {
+.sideBar {
     grid-area: sidebar;
     display: flex;
     flex-direction: column;

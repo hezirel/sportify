@@ -13,7 +13,7 @@ import activities from "./activitiesList";
 const SideBar = () => {
 
 	return (
-		<aside className="side-bar">
+		<aside className="sideBar">
 			{activities.map((Item, index) => 
 				<li className="activities-list-items" key={index}>
 					{<Item/>}
