@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sportify/static/css/main.51ff8752.css",
-    "main.js": "/sportify/static/js/main.e52a227b.js",
+    "main.js": "/sportify/static/js/main.ae287916.js",
     "static/media/logo.png": "/sportify/static/media/logo.337e8febecea24c0c4b1.png",
     "static/media/icon_swim.svg": "/sportify/static/media/icon_swim.bc12b705d445672f550a8441d581c700.svg",
     "static/media/icon_bicycle.svg": "/sportify/static/media/icon_bicycle.fe885ecda828d3e2f637bb3b675db76c.svg",
@@ -13,10 +13,10 @@
     "static/media/icon_weight.svg": "/sportify/static/media/icon_weight.9d22814b98d0ca386d9ddacded4eae80.svg",
     "index.html": "/sportify/index.html",
     "main.51ff8752.css.map": "/sportify/static/css/main.51ff8752.css.map",
-    "main.e52a227b.js.map": "/sportify/static/js/main.e52a227b.js.map"
+    "main.ae287916.js.map": "/sportify/static/js/main.ae287916.js.map"
   },
   "entrypoints": [
     "static/css/main.51ff8752.css",
-    "static/js/main.e52a227b.js"
+    "static/js/main.ae287916.js"
   ]
 }
