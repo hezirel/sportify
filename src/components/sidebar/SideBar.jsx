@@ -13,13 +13,13 @@ import activities from "./activitiesList";
 const SideBar = () => {
 
 	return (
-		<aside className="sideBar">
+		<div className="sideBar">
 			{activities.map((Item, index) => 
 				<li className="activities-list-items" key={index}>
 					{<Item/>}
 				</li>
 			)}
-		</aside>
+		</div>
 	);
 
 };
